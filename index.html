@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Group Holdings - Professional Printing & Web Development Services" />
+  <title>Group Holdings</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 8%;
+      background: linear-gradient(to right, rgba(15,23,42,0.9), rgba(30,41,59,0.9)),
+      url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop') center/cover;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 30px;
+      color: #cbd5e1;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #0ea5e9;
+    }
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: #38bdf8;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #38bdf8;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #38bdf8;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255,255,255,0.08);
+      color: white;
+    }
+
+    .contact-form textarea {
+      min-height: 150px;
+    }
+
+    footer {
+      background: #020617;
+      padding: 30px 8%;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-links {
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer-links a:hover {
+      color: #38bdf8;
+    }
+
+    .dark-toggle {
+      cursor: pointer;
+      padding: 10px 16px;
+      border-radius: 30px;
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      font-weight: 600;
+    }
+
+    .light-mode {
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    .light-mode header,
+    .light-mode footer {
+      background: white;
+      color: #0f172a;
+    }
+
+    .light-mode .card {
+      background: white;
+      color: #0f172a;
+    }
+
+    .light-mode nav a {
+      color: #0f172a;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+
+      nav ul {
+        gap: 15px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Group Holdings</div>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#printing">Printing</a></li>
+        <li><a href="#web">Web Dev</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="dark-toggle" onclick="toggleMode()">Mode</button>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Professional Printing & Web Development Solutions</h1>
+      <p>
+        Group Holdings provides high-quality printing services and cutting-edge web development solutions for businesses and individuals.
+      </p>
+
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+        <a href="#printing" class="btn">Printing Services</a>
+        <a href="#web" class="btn">Web Development</a>
+        <a href="#portfolio" class="btn">View Portfolio</a>
+        <a href="#contact" class="btn">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>About Us</h2>
+    </div>
+
+    <p style="max-width: 900px; margin: auto; text-align: center; color: #cbd5e1;">
+      Group Holdings is a modern digital and printing solutions company dedicated to helping businesses grow through creative branding, high-quality print products, and professional web development.
+    </p>
+  </section>
+
+  <section id="printing">
+    <div class="section-title">
+      <h2>Printing Services</h2>
+    </div>
+
+    <div class="services">
+      <div class="card">
+        <h3>Business Cards</h3>
+        <p>Premium business card design and printing services.</p>
+      </div>
+
+      <div class="card">
+        <h3>Flyers & Posters</h3>
+        <p>Eye-catching promotional materials for your business.</p>
+      </div>
+
+      <div class="card">
+        <h3>Banners</h3>
+        <p>Large-format banners for events and advertising.</p>
+      </div>
+
+      <div class="card">
+        <h3>T-Shirt Printing</h3>
+        <p>Custom branded apparel printing solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="web">
+    <div class="section-title">
+      <h2>Web Development Services</h2>
+    </div>
+
+    <div class="services">
+      <div class="card">
+        <h3>Website Design</h3>
+        <p>Modern responsive website design tailored for your business.</p>
+      </div>
+
+      <div class="card">
+        <h3>E-Commerce</h3>
+        <p>Online stores with secure payment integration.</p>
+      </div>
+
+      <div class="card">
+        <h3>SEO Optimization</h3>
+        <p>Improve your Google rankings and online visibility.</p>
+      </div>
+
+      <div class="card">
+        <h3>Website Maintenance</h3>
+        <p>Reliable updates, security, and support services.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="section-title">
+      <h2>Portfolio</h2>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Project">
+      </div>
+
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Project">
+      </div>
+
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Project">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+    </div>
+
+    <form class="contact-form" onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Phone Number" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <h3>Group Holdings</h3>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p>© 2026 Group Holdings. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      alert('Thank you! Your message has been sent successfully.');
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+
+</body>
+</html>
