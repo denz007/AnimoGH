@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About Group Holdings - Printing & Web Development Services">
+  <title>About Us | Group Holdings</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(15,23,42,0.95);
+      backdrop-filter:blur(10px);
+      padding:15px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo{
+      font-size:1.8rem;
+      font-weight:700;
+      color:#38bdf8;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+    }
+
+    nav a:hover,
+    nav a.active{
+      color:#38bdf8;
+    }
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1400&auto=format&fit=crop')
+      center/cover;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:0 8%;
+    }
+
+    .hero-content h1{
+      font-size:4rem;
+      margin-bottom:20px;
+    }
+
+    .hero-content p{
+      max-width:700px;
+      margin:auto;
+      margin-bottom:30px;
+      color:#cbd5e1;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 30px;
+      margin:10px;
+      background:#38bdf8;
+      color:#0f172a;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:#0ea5e9;
+    }
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:2.5rem;
+      color:#38bdf8;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+      align-items:center;
+    }
+
+    .about-grid img{
+      width:100%;
+      border-radius:20px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      padding:30px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#38bdf8;
+    }
+
+    .card h3{
+      color:#38bdf8;
+      margin-bottom:15px;
+    }
+
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .team-card{
+      text-align:center;
+      background:rgba(255,255,255,0.05);
+      padding:25px;
+      border-radius:20px;
+      transition:0.3s;
+    }
+
+    .team-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .team-card img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:15px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+      text-align:center;
+    }
+
+    .stat-box{
+      background:rgba(255,255,255,0.05);
+      padding:30px;
+      border-radius:20px;
+    }
+
+    .stat-box h2{
+      font-size:3rem;
+      color:#38bdf8;
+    }
+
+    .testimonial-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .testimonial{
+      background:rgba(255,255,255,0.05);
+      padding:30px;
+      border-radius:20px;
+    }
+
+    .cta{
+      text-align:center;
+      background:linear-gradient(to right,#0ea5e9,#38bdf8);
+      border-radius:25px;
+      padding:60px 30px;
+      color:#0f172a;
+    }
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:30px;
+      margin-top:50px;
+    }
+
+    footer a{
+      color:#38bdf8;
+      text-decoration:none;
+      margin:0 10px;
+    }
+
+    .dark-toggle{
+      cursor:pointer;
+      border:none;
+      padding:10px 18px;
+      border-radius:30px;
+      background:#38bdf8;
+      color:#0f172a;
+      font-weight:600;
+    }
+
+    .light-mode{
+      background:#f8fafc;
+      color:#0f172a;
+    }
+
+    .light-mode header,
+    .light-mode footer{
+      background:white;
+      color:#0f172a;
+    }
+
+    .light-mode nav a{
+      color:#0f172a;
+    }
+
+    .light-mode .card,
+    .light-mode .team-card,
+    .light-mode .testimonial,
+    .light-mode .stat-box{
+      background:white;
+      color:#0f172a;
+    }
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:2.5rem;
+      }
+
+      nav ul{
+        gap:15px;
+        font-size:0.9rem;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+
+  <div class="logo">Group Holdings</div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="#">About</a></li>
+      <li><a href="#">Printing</a></li>
+      <li><a href="#">Web Development</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <button class="dark-toggle" onclick="toggleMode()">Mode</button>
+
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>About Group Holdings</h1>
+
+    <p>
+      Professional Printing & Digital Solutions for Modern Businesses.
+      We help brands grow through high-quality printing and powerful web solutions.
+    </p>
+
+    <a href="#" class="btn">Contact Us</a>
+    <a href="#" class="btn">View Services</a>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="section-title">
+    <h2>Company Overview</h2>
+  </div>
+
+  <div class="about-grid">
+
+    <div>
+      <h3 style="margin-bottom:20px; color:#38bdf8;">
+        Building Modern Brands
+      </h3>
+
+      <p>
+        Group Holdings is a professional company specializing in
+        creative printing services and advanced web development solutions.
+        Our mission is to help businesses establish strong branding and
+        powerful digital presence.
+      </p>
+
+      <br>
+
+      <p>
+        From business cards and banners to modern responsive websites,
+        we deliver high-quality solutions tailored to our clients.
+      </p>
+    </div>
+
+    <div>
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="section-title">
+    <h2>Mission & Vision</h2>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To provide innovative printing and web development services
+        that help businesses grow professionally.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To become a leading digital and printing solutions company
+        trusted worldwide.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="section-title">
+    <h2>Why Choose Us</h2>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Professional Team</h3>
+      <p>Experienced experts delivering modern solutions.</p>
+    </div>
+
+    <div class="card">
+      <h3>Fast Delivery</h3>
+      <p>Quick turnaround times for all projects.</p>
+    </div>
+
+    <div class="card">
+      <h3>Quality Printing</h3>
+      <p>Premium printing with vibrant professional results.</p>
+    </div>
+
+    <div class="card">
+      <h3>Modern Websites</h3>
+      <p>Responsive and SEO-friendly web solutions.</p>
+    </div>
+
+    <div class="card">
+      <h3>24/7 Support</h3>
+      <p>Reliable support whenever you need assistance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Affordable Pricing</h3>
+      <p>Professional services at competitive rates.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="section-title">
+    <h2>Our Team</h2>
+  </div>
+
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg">
+      <h3>John Smith</h3>
+      <p>CEO & Founder</p>
+    </div>
+
+    <div class="team-card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg">
+      <h3>Sarah Johnson</h3>
+      <p>Creative Director</p>
+    </div>
+
+    <div class="team-card">
+      <img src="https://randomuser.me/api/portraits/men/65.jpg">
+      <h3>David Lee</h3>
+      <p>Lead Developer</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="section-title">
+    <h2>Our Statistics</h2>
+  </div>
+
+  <div class="stats">
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="500">0</h2>
+      <p>Projects Completed</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="300">0</h2>
+      <p>Happy Clients</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="150">0</h2>
+      <p>Websites Developed</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="1200">0</h2>
+      <p>Printing Orders</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="section-title">
+    <h2>Testimonials</h2>
+  </div>
+
+  <div class="testimonial-grid">
+
+    <div class="testimonial">
+      <h3>★★★★★</h3>
+      <p>
+        “Excellent service and professional website development.
+        Highly recommended!”
+      </p>
+      <br>
+      <strong>- Michael</strong>
+    </div>
+
+    <div class="testimonial">
+      <h3>★★★★★</h3>
+      <p>
+        “Their printing quality is outstanding and delivery is always fast.”
+      </p>
+      <br>
+      <strong>- Amanda</strong>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="cta">
+
+    <h2 style="font-size:2.5rem; margin-bottom:20px;">
+      Ready to Work With Group Holdings?
+    </h2>
+
+    <p style="margin-bottom:30px;">
+      Let us help your business grow with professional printing and web development services.
+    </p>
+
+    <a href="#" class="btn">Request a Quote</a>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <h3>Group Holdings</h3>
+
+  <br>
+
+  <p>Email: info@groupholdings.com</p>
+  <p>Phone: +27 00 000 0000</p>
+
+  <br>
+
+  <div>
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">LinkedIn</a>
+  </div>
+
+  <br>
+
+  <p>© 2026 Group Holdings. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+  function toggleMode(){
+    document.body.classList.toggle('light-mode');
+  }
+
+  const counters = document.querySelectorAll('.counter');
+
+  counters.forEach(counter => {
+
+    counter.innerText = '0';
+
+    const updateCounter = () => {
+
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+
+      const increment = target / 100;
+
+      if(current < target){
+        counter.innerText = `${Math.ceil(current + increment)}`;
+        setTimeout(updateCounter,20);
+      } else {
+        counter.innerText = target;
+      }
+
+    };
+
+    updateCounter();
+
+  });
+
+</script>
+
+</body>
+</html>
