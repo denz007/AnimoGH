@@ -15,14 +15,12 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
     font-family:'Poppins',sans-serif;
 }
 
 body{
     background:#0f172a;
     color:white;
-    line-height:1.6;
 }
 
 /* ================= HEADER ================= */
@@ -31,28 +29,24 @@ header{
     top:0;
     width:100%;
     z-index:1000;
-    padding:12px 6%;
+    padding:15px 6%;
     background:rgba(15,23,42,0.95);
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    gap:12px;
-    flex-wrap:wrap;
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 header img{
     width:120px;
-    height:auto;
 }
 
 nav ul{
     display:flex;
-    gap:16px;
+    gap:18px;
     list-style:none;
     flex-wrap:wrap;
-    justify-content:center;
 }
 
 nav a{
@@ -67,32 +61,25 @@ nav a.active{
     color:#38bdf8;
 }
 
-/* FIXED BUTTON */
+/* ================= BUTTON ================= */
 .dark-toggle{
     padding:10px 14px;
     border:none;
     border-radius:30px;
     background:#38bdf8;
     color:#0f172a;
-    cursor:pointer;
     font-weight:600;
-    transition:0.3s;
-    white-space:nowrap;
-}
-
-.dark-toggle:hover{
-    transform:translateY(-2px);
-    background:#0ea5e9;
+    cursor:pointer;
 }
 
 /* ================= HERO ================= */
 .hero{
     min-height:60vh;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:120px 6% 60px;
+    padding:140px 6% 70px;
 
     background:
     linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
@@ -106,12 +93,12 @@ nav a.active{
 }
 
 .hero-content p{
-    max-width:700px;
-    margin:auto;
     color:#cbd5e1;
+    max-width:650px;
+    margin:auto;
 }
 
-/* ================= SECTION ================= */
+/* ================= SECTION LAYOUT ================= */
 section{
     padding:80px 6%;
 }
@@ -126,29 +113,35 @@ section{
     color:#38bdf8;
 }
 
-/* ================= GRID ================= */
-.contact-container{
+/* ================= MAIN GRID (FIXED LAYOUT) ================= */
+.contact-wrapper{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    grid-template-columns:1.2fr 1fr;
+    gap:30px;
+    align-items:start;
+}
+
+/* ================= LEFT SIDE ================= */
+.left-stack{
+    display:grid;
+    gap:20px;
 }
 
 /* ================= CARDS ================= */
-.info-card,
-.contact-form{
+.card{
     background:rgba(255,255,255,0.05);
-    padding:25px;
+    padding:22px;
     border-radius:18px;
-    border:1px solid rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.08);
     transition:0.3s;
 }
 
-.info-card:hover{
-    transform:translateY(-6px);
+.card:hover{
+    transform:translateY(-5px);
     border-color:#38bdf8;
 }
 
-.info-card h3{
+.card h3{
     color:#38bdf8;
     margin-bottom:8px;
 }
@@ -158,16 +151,14 @@ section{
     display:flex;
     flex-wrap:wrap;
     gap:10px;
-    justify-content:center;
-    margin-top:10px;
 }
 
 .socials a{
-    text-decoration:none;
-    color:#0f172a;
     background:#38bdf8;
+    color:#0f172a;
     padding:10px 14px;
     border-radius:50px;
+    text-decoration:none;
     font-weight:600;
     transition:0.3s;
 }
@@ -177,150 +168,94 @@ section{
     background:#0ea5e9;
 }
 
-/* ================= FORM ================= */
-.contact-form h2{
-    color:#38bdf8;
+/* ================= FORM CARD ================= */
+.form-card{
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.form-card h2{
     text-align:center;
-    margin-bottom:15px;
+    color:#38bdf8;
+    margin-bottom:20px;
 }
 
-.form-group{
-    margin-bottom:12px;
-}
-
-.contact-form input,
-.contact-form textarea{
+input, textarea{
     width:100%;
     padding:14px;
+    margin-bottom:12px;
     border:none;
     border-radius:12px;
     background:rgba(255,255,255,0.08);
     color:white;
-    outline:none;
 }
 
-.contact-form textarea{
-    min-height:130px;
+textarea{
+    min-height:140px;
     resize:none;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{
-    color:#cbd5e1;
-}
-
-/* ================= BUTTON FIX ================= */
 .btn{
-    display:inline-block;
-    padding:12px 22px;
-    background:#38bdf8;
-    color:#0f172a;
+    width:100%;
+    padding:14px;
     border:none;
     border-radius:50px;
+    background:#38bdf8;
+    color:#0f172a;
     font-weight:600;
     cursor:pointer;
     transition:0.3s;
-    min-width:160px;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
     background:#0ea5e9;
-}
-
-.contact-form button{
-    display:block;
-    margin:10px auto 0;
-}
-
-/* ================= MAP ================= */
-.map{
-    margin-top:50px;
-    border-radius:18px;
-    overflow:hidden;
-}
-
-.map iframe{
-    width:100%;
-    height:350px;
-    border:none;
+    transform:translateY(-3px);
 }
 
 /* ================= CTA ================= */
 .cta{
-    background:linear-gradient(to right,#0ea5e9,#38bdf8);
-    border-radius:20px;
+    margin-top:50px;
     text-align:center;
     padding:50px 20px;
+    border-radius:20px;
+    background:linear-gradient(to right,#0ea5e9,#38bdf8);
     color:#0f172a;
 }
 
 /* ================= FOOTER ================= */
 footer{
-    background:#020617;
     text-align:center;
     padding:40px 20px;
+    background:#020617;
 }
 
 footer a{
     color:#38bdf8;
-    text-decoration:none;
     margin:0 10px;
-}
-
-/* ================= LIGHT MODE ================= */
-.light-mode{
-    background:#f8fafc;
-    color:#0f172a;
-}
-
-.light-mode header,
-.light-mode footer{
-    background:white;
-}
-
-.light-mode nav a{
-    color:#0f172a;
-}
-
-.light-mode .info-card,
-.light-mode .contact-form{
-    background:white;
-    color:#0f172a;
-}
-
-.light-mode .contact-form input,
-.light-mode .contact-form textarea{
-    background:#f1f5f9;
-    color:#0f172a;
+    text-decoration:none;
 }
 
 /* ================= MOBILE ================= */
-@media(max-width:768px){
+@media(max-width:900px){
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
 
     header{
         flex-direction:column;
         text-align:center;
+        gap:10px;
     }
 
     nav ul{
         justify-content:center;
-        gap:10px;
-        font-size:0.85rem;
     }
 
     .hero-content h1{
-        font-size:2.2rem;
-    }
-
-    .btn{
-        width:100%;
-        max-width:240px;
-    }
-
-    .socials a{
-        flex:1 1 40%;
-        text-align:center;
+        font-size:2.3rem;
     }
 }
 
@@ -330,7 +265,7 @@ footer a{
 <body>
 
 <header>
-    <img src="animo 2.png" alt="Logo">
+    <img src="animo 2.png">
 
     <nav>
         <ul>
@@ -349,7 +284,7 @@ footer a{
 <section class="hero">
     <div class="hero-content">
         <h1>Contact Us</h1>
-        <p>Reach out for printing, branding, and web development services.</p>
+        <p>Let’s build your brand through printing, design, and web development.</p>
     </div>
 </section>
 
@@ -359,90 +294,81 @@ footer a{
     <h2>Get In Touch</h2>
 </div>
 
-<div class="contact-container">
+<div class="contact-wrapper">
 
-    <div class="info-card">
-        <h3>Email</h3>
-        <p>info@groupholdings.com</p>
+    <!-- LEFT SIDE -->
+    <div class="left-stack">
+
+        <div class="card">
+            <h3>Email</h3>
+            <p>info@groupholdings.com</p>
+        </div>
+
+        <div class="card">
+            <h3>Phone</h3>
+            <p>+27 68 714 3564</p>
+            <p>+27 61 167 3793</p>
+        </div>
+
+        <div class="card">
+            <h3>Location</h3>
+            <p>Benoni, Gauteng, South Africa</p>
+        </div>
+
+        <div class="card">
+            <h3>Business Hours</h3>
+            <p>Mon - Fri: 08:00 - 17:00</p>
+        </div>
+
+        <div class="card">
+            <h3>Socials</h3>
+            <div class="socials">
+                <a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
+                <a href="https://www.instagram.com/animo_groupholdings/">Instagram</a>
+                <a href="https://www.linkedin.com/company/animogroupholdings/">LinkedIn</a>
+            </div>
+        </div>
+
     </div>
 
-    <div class="info-card">
-        <h3>Phone</h3>
-        <p>+27 68 714 3564</p>
-        <p>+27 61 167 3793</p>
-    </div>
-
-    <div class="info-card">
-        <h3>Location</h3>
-        <p>Benoni, Gauteng, South Africa</p>
-    </div>
-
-    <div class="info-card">
-        <h3>Business Hours</h3>
-        <p>Mon - Fri: 08:00 - 17:00</p>
-    </div>
-
-    <div class="socials">
-        <a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
-        <a href="https://www.instagram.com/animo_groupholdings/">Instagram</a>
-        <a href="https://www.linkedin.com/company/animogroupholdings/">LinkedIn</a>
-    </div>
-
-    <form class="contact-form"
-        action="https://formspree.io/f/xojzdbzd"
-        method="POST">
+    <!-- RIGHT SIDE FORM -->
+    <div class="form-card">
 
         <h2>Send Message</h2>
 
-        <div class="form-group">
+        <form action="https://formspree.io/f/xojzdbzd" method="POST">
+
             <input type="text" name="full_name" placeholder="Full Name" required>
-        </div>
-
-        <div class="form-group">
             <input type="email" name="email" placeholder="Email" required>
-        </div>
-
-        <div class="form-group">
             <input type="text" name="phone" placeholder="Phone">
-        </div>
 
-        <div class="form-group">
             <textarea name="message" placeholder="Message" required></textarea>
-        </div>
 
-        <input type="text" name="_gotcha" style="display:none">
+            <input type="text" name="_gotcha" style="display:none">
 
-        <button type="submit" class="btn">Send Message</button>
-    </form>
+            <button class="btn" type="submit">Send Message</button>
+
+        </form>
+
+    </div>
 
 </div>
-
-<div class="map">
-    <iframe src="https://maps.google.com/maps?q=Benoni%20South%20Africa&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-</div>
-
-</section>
-
-<section>
 
 <div class="cta">
     <h2>Let’s Build Something Amazing</h2>
-    <p>Contact us today for professional services.</p>
+    <p>Contact us today and let’s grow your business.</p>
 </div>
 
 </section>
 
 <footer>
     <h3>Animo Group Holdings</h3>
-    <p>Email: info@groupholdings.com</p>
-    <p>Phone: +27 68 714 3564</p>
-    <p>Phone: +27 61 167 3793</p>
 
-    <div>
+    <p>
         <a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
         <a href="https://www.instagram.com/animo_groupholdings/">Instagram</a>
         <a href="https://www.linkedin.com/company/animogroupholdings/">LinkedIn</a>
-    </div>
+    </p>
 
     <p>© 2026 Animo Group Holdings</p>
 </footer>
