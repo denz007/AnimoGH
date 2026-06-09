@@ -21,6 +21,7 @@
 body{
     background:#0f172a;
     color:white;
+    line-height:1.6;
 }
 
 /* ================= HEADER ================= */
@@ -29,13 +30,15 @@ header{
     top:0;
     width:100%;
     z-index:1000;
-    padding:15px 6%;
+    padding:12px 6%;
     background:rgba(15,23,42,0.95);
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(10px);
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid rgba(255,255,255,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    flex-wrap:wrap;
+    gap:10px;
 }
 
 header img{
@@ -52,7 +55,6 @@ nav ul{
 nav a{
     color:white;
     text-decoration:none;
-    font-size:0.95rem;
     transition:0.3s;
 }
 
@@ -61,69 +63,60 @@ nav a.active{
     color:#38bdf8;
 }
 
-/* ================= BUTTON ================= */
 .dark-toggle{
     padding:10px 14px;
     border:none;
     border-radius:30px;
     background:#38bdf8;
     color:#0f172a;
-    font-weight:600;
     cursor:pointer;
+    font-weight:600;
 }
 
 /* ================= HERO ================= */
 .hero{
-    min-height:60vh;
+    min-height:55vh;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:140px 6% 70px;
-
+    padding:140px 6% 60px;
     background:
     linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
     url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop')
     center/cover;
 }
 
-.hero-content h1{
-    font-size:3.2rem;
+.hero h1{
+    font-size:3rem;
     margin-bottom:10px;
 }
 
-.hero-content p{
+.hero p{
     color:#cbd5e1;
-    max-width:650px;
+    max-width:600px;
     margin:auto;
 }
 
-/* ================= SECTION LAYOUT ================= */
+/* ================= SECTIONS ================= */
 section{
     padding:80px 6%;
 }
 
-.section-title{
+.title{
     text-align:center;
     margin-bottom:40px;
 }
 
-.section-title h2{
+.title h2{
     font-size:2.2rem;
     color:#38bdf8;
 }
 
-/* ================= MAIN GRID (FIXED LAYOUT) ================= */
-.contact-wrapper{
+/* ================= GRID ================= */
+.grid{
     display:grid;
-    grid-template-columns:1.2fr 1fr;
-    gap:30px;
-    align-items:start;
-}
-
-/* ================= LEFT SIDE ================= */
-.left-stack{
-    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 
@@ -131,13 +124,13 @@ section{
 .card{
     background:rgba(255,255,255,0.05);
     padding:22px;
-    border-radius:18px;
-    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,0.1);
     transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-6px);
     border-color:#38bdf8;
 }
 
@@ -150,7 +143,9 @@ section{
 .socials{
     display:flex;
     flex-wrap:wrap;
+    justify-content:center;
     gap:10px;
+    margin-top:10px;
 }
 
 .socials a{
@@ -160,68 +155,78 @@ section{
     border-radius:50px;
     text-decoration:none;
     font-weight:600;
-    transition:0.3s;
 }
 
-.socials a:hover{
-    transform:translateY(-3px);
-    background:#0ea5e9;
-}
-
-/* ================= FORM CARD ================= */
-.form-card{
+/* ================= FORM ================= */
+.form{
+    max-width:600px;
+    margin:auto;
     background:rgba(255,255,255,0.05);
     padding:25px;
-    border-radius:18px;
-    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,0.1);
 }
 
-.form-card h2{
-    text-align:center;
-    color:#38bdf8;
-    margin-bottom:20px;
-}
-
-input, textarea{
+.form input,
+.form textarea{
     width:100%;
     padding:14px;
     margin-bottom:12px;
-    border:none;
     border-radius:12px;
+    border:none;
     background:rgba(255,255,255,0.08);
     color:white;
 }
 
-textarea{
+.form textarea{
     min-height:140px;
-    resize:none;
 }
 
 .btn{
     width:100%;
-    padding:14px;
+    padding:12px;
     border:none;
     border-radius:50px;
     background:#38bdf8;
     color:#0f172a;
     font-weight:600;
     cursor:pointer;
-    transition:0.3s;
 }
 
-.btn:hover{
-    background:#0ea5e9;
-    transform:translateY(-3px);
+/* ================= FAQ ================= */
+.faq{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    background:rgba(255,255,255,0.05);
+    padding:18px;
+    margin-bottom:12px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.faq-item h4{
+    color:#38bdf8;
+    margin-bottom:6px;
+}
+
+/* ================= MAP ================= */
+.map iframe{
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:16px;
 }
 
 /* ================= CTA ================= */
 .cta{
-    margin-top:50px;
     text-align:center;
-    padding:50px 20px;
-    border-radius:20px;
+    padding:60px 20px;
     background:linear-gradient(to right,#0ea5e9,#38bdf8);
     color:#0f172a;
+    border-radius:18px;
 }
 
 /* ================= FOOTER ================= */
@@ -238,24 +243,21 @@ footer a{
 }
 
 /* ================= MOBILE ================= */
-@media(max-width:900px){
-
-    .contact-wrapper{
-        grid-template-columns:1fr;
-    }
+@media(max-width:768px){
 
     header{
         flex-direction:column;
         text-align:center;
-        gap:10px;
     }
 
     nav ul{
         justify-content:center;
+        gap:10px;
+        font-size:0.85rem;
     }
 
-    .hero-content h1{
-        font-size:2.3rem;
+    .hero h1{
+        font-size:2.2rem;
     }
 }
 
@@ -282,100 +284,122 @@ footer a{
 </header>
 
 <section class="hero">
-    <div class="hero-content">
+    <div>
         <h1>Contact Us</h1>
-        <p>Let’s build your brand through printing, design, and web development.</p>
+        <p>We respond fast. Let’s build your brand, website or print solution today.</p>
     </div>
 </section>
 
+<!-- CONTACT INFO -->
 <section>
+<div class="title"><h2>Get In Touch</h2></div>
 
-<div class="section-title">
-    <h2>Get In Touch</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Email</h3>
+<p>info@groupholdings.com</p>
 </div>
 
-<div class="contact-wrapper">
+<div class="card">
+<h3>Phone</h3>
+<p>+27 68 714 3564</p>
+<p>+27 61 167 3793</p>
+</div>
 
-    <!-- LEFT SIDE -->
-    <div class="left-stack">
+<div class="card">
+<h3>Location</h3>
+<p>Benoni, Gauteng, South Africa</p>
+</div>
 
-        <div class="card">
-            <h3>Email</h3>
-            <p>info@groupholdings.com</p>
-        </div>
-
-        <div class="card">
-            <h3>Phone</h3>
-            <p>+27 68 714 3564</p>
-            <p>+27 61 167 3793</p>
-        </div>
-
-        <div class="card">
-            <h3>Location</h3>
-            <p>Benoni, Gauteng, South Africa</p>
-        </div>
-
-        <div class="card">
-            <h3>Business Hours</h3>
-            <p>Mon - Fri: 08:00 - 17:00</p>
-        </div>
-
-        <div class="card">
-            <h3>Socials</h3>
-            <div class="socials">
-                <a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
-                <a href="https://www.instagram.com/animo_groupholdings/">Instagram</a>
-                <a href="https://www.linkedin.com/company/animogroupholdings/">LinkedIn</a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- RIGHT SIDE FORM -->
-    <div class="form-card">
-
-        <h2>Send Message</h2>
-
-        <form action="https://formspree.io/f/xojzdbzd" method="POST">
-
-            <input type="text" name="full_name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="phone" placeholder="Phone">
-
-            <textarea name="message" placeholder="Message" required></textarea>
-
-            <input type="text" name="_gotcha" style="display:none">
-
-            <button class="btn" type="submit">Send Message</button>
-
-        </form>
-
-    </div>
+<div class="card">
+<h3>Business Hours</h3>
+<p>Mon - Fri: 08:00 - 17:00</p>
+</div>
 
 </div>
 
-<div class="cta">
-    <h2>Let’s Build Something Amazing</h2>
-    <p>Contact us today and let’s grow your business.</p>
+<div class="socials">
+<a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
+<a href="https://www.instagram.com/animo_groupholdings/">Instagram</a>
+<a href="https://www.linkedin.com/company/animogroupholdings/">LinkedIn</a>
 </div>
-
 </section>
 
+<!-- FORM -->
+<section>
+<div class="title"><h2>Send Message</h2></div>
+
+<form class="form"
+action="https://formspree.io/f/xojzdbzd"
+method="POST">
+
+<input type="text" name="full_name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="text" name="phone" placeholder="Phone">
+<textarea name="message" placeholder="Message" required></textarea>
+
+<button class="btn">Send Message</button>
+</form>
+</section>
+
+<!-- FAQ (RESTORED) -->
+<section>
+<div class="title"><h2>Frequently Asked Questions</h2></div>
+
+<div class="faq">
+
+<div class="faq-item">
+<h4>How fast do you respond?</h4>
+<p>We usually respond within 1–3 hours during business hours.</p>
+</div>
+
+<div class="faq-item">
+<h4>Do you offer custom website design?</h4>
+<p>Yes, all websites are fully custom-built to match your brand.</p>
+</div>
+
+<div class="faq-item">
+<h4>Do you handle printing in bulk?</h4>
+<p>Yes, we handle both small and large-scale printing orders.</p>
+</div>
+
+<div class="faq-item">
+<h4>Can I request a quote first?</h4>
+<p>Yes, all services start with a free quotation.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section>
+<div class="cta">
+<h2>Let’s Build Something Amazing</h2>
+<p>Contact us today and let’s grow your business.</p>
+</div>
+</section>
+
+<!-- MAP -->
+<section class="map">
+<iframe src="https://maps.google.com/maps?q=Benoni%20South%20Africa&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    <h3>Animo Group Holdings</h3>
+<h3>Animo Group Holdings</h3>
+<p>Email: info@groupholdings.com</p>
 
-    <p>
-        <a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
-        <a href="https://www.instagram.com/animo_groupholdings/">Instagram</a>
-        <a href="https://www.linkedin.com/company/animogroupholdings/">LinkedIn</a>
-    </p>
+<a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
+<a href="https://www.instagram.com/animo_groupholdings/">Instagram</a>
+<a href="https://www.linkedin.com/company/animogroupholdings/">LinkedIn</a>
 
-    <p>© 2026 Animo Group Holdings</p>
+<p>© 2026 Animo Group Holdings</p>
 </footer>
 
 <script>
 function toggleMode(){
-    document.body.classList.toggle('light-mode');
+document.body.classList.toggle('light-mode');
 }
 </script>
 
