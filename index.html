@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Group Holdings - Professional Printing & Web Development Services" />
-<title>Animo Group Holdings | Printing & Web Development</title>
+<title>Animo Group Holdings</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,260 +12,268 @@
 
 <style>
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-  scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-  background:#0f172a;
-  color:white;
-  line-height:1.6;
-  overflow-x:hidden;
+background:#0f172a;
+color:white;
+line-height:1.6;
+overflow-x:hidden;
 }
 
 /* HEADER */
 header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:rgba(15,23,42,0.95);
-  backdrop-filter:blur(10px);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 6%;
-  z-index:1000;
-  border-bottom:1px solid rgba(255,255,255,0.1);
+position:fixed;
+top:0;
+width:100%;
+background:rgba(15,23,42,0.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 .logo img{
-  width:120px;
+width:140px;
+height:60px;
 }
 
-/* NAV */
 nav ul{
-  display:flex;
-  list-style:none;
-  gap:20px;
+display:flex;
+list-style:none;
+gap:25px;
 }
 
 nav a{
-  text-decoration:none;
-  color:white;
-  font-size:0.95rem;
-  transition:0.3s;
+color:white;
+text-decoration:none;
+transition:0.3s;
 }
 
 nav a:hover{
-  color:#38bdf8;
+color:#38bdf8;
 }
 
-/* MOBILE MENU BUTTON */
-.menu-toggle{
-  display:none;
-  font-size:2rem;
-  cursor:pointer;
-  color:white;
-}
-
-/* BUTTON */
 .dark-toggle{
-  padding:10px 14px;
-  border:none;
-  border-radius:30px;
-  background:#38bdf8;
-  color:#0f172a;
-  font-weight:600;
-  cursor:pointer;
+cursor:pointer;
+padding:10px 16px;
+border-radius:30px;
+background:#38bdf8;
+color:#0f172a;
+border:none;
+font-weight:600;
+}
+
+/* MOBILE MENU */
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:white;
+}
+
+@media(max-width:900px){
+.menu-toggle{
+display:block;
+}
+
+nav{
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#0f172a;
+display:none;
+flex-direction:column;
+}
+
+nav.active{
+display:flex;
+}
+
+nav ul{
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
 }
 
 /* HERO */
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:120px 6% 60px;
-  background:
-    linear-gradient(rgba(15,23,42,0.85),rgba(15,23,42,0.85)),
-    url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop')
-    center/cover;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 8% 60px;
+background:
+linear-gradient(to right,rgba(15,23,42,0.9),rgba(30,41,59,0.9)),
+url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop')
+center/cover;
 }
 
-.hero h1{
-  font-size:3.2rem;
-  margin-bottom:20px;
+.hero-content h1{
+font-size:4rem;
 }
 
-.hero p{
-  max-width:700px;
-  margin:auto;
-  color:#cbd5e1;
+.hero-content p{
+max-width:700px;
+margin:20px auto;
+color:#cbd5e1;
 }
 
 /* BUTTONS */
 .btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 24px;
-  background:#38bdf8;
-  color:#0f172a;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
+display:inline-block;
+padding:14px 30px;
+background:#38bdf8;
+color:#0f172a;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
 }
 
 .btn:hover{
-  transform:translateY(-3px);
-  background:#0ea5e9;
+transform:translateY(-3px);
+background:#0ea5e9;
 }
 
 /* SECTIONS */
 section{
-  padding:80px 6%;
+padding:100px 8%;
 }
 
 .section-title{
-  text-align:center;
-  margin-bottom:40px;
+text-align:center;
+margin-bottom:50px;
 }
 
 .section-title h2{
-  font-size:2.2rem;
-  color:#38bdf8;
+font-size:2.5rem;
+color:#38bdf8;
 }
 
-/* CARDS */
+/* SERVICES */
 .services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-  background:rgba(255,255,255,0.05);
-  padding:25px;
-  border-radius:15px;
-  border:1px solid rgba(255,255,255,0.1);
-  transition:0.3s;
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-8px);
-  border-color:#38bdf8;
+transform:translateY(-10px);
+border-color:#38bdf8;
 }
 
 .card h3{
-  color:#38bdf8;
-  margin-bottom:10px;
+color:#38bdf8;
+margin-bottom:10px;
 }
 
 /* PORTFOLIO */
 .portfolio-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .portfolio-item img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:15px;
-  transition:0.4s;
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+transition:0.4s;
 }
 
 .portfolio-item img:hover{
-  transform:scale(1.05);
+transform:scale(1.05);
 }
 
-/* CONTACT */
+/* FORM */
 .contact-form{
-  max-width:600px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
 }
 
 .contact-form input,
 .contact-form textarea{
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:rgba(255,255,255,0.08);
-  color:white;
-  outline:none;
-}
-
-.contact-form textarea{
-  min-height:140px;
+padding:15px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.08);
+color:white;
+font-size:1rem;
 }
 
 /* FOOTER */
 footer{
-  background:#020617;
-  text-align:center;
-  padding:30px;
-  border-top:1px solid rgba(255,255,255,0.1);
+background:#020617;
+padding:30px 8%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.footer-links a{
+color:#94a3b8;
+margin:0 10px;
+text-decoration:none;
+}
+
+.footer-links a:hover{
+color:#38bdf8;
 }
 
 /* LIGHT MODE */
 .light-mode{
-  background:#f8fafc;
-  color:#0f172a;
+background:#f8fafc;
+color:#0f172a;
 }
 
 .light-mode header,
 .light-mode footer{
-  background:white;
-  color:#0f172a;
+background:white;
+color:#0f172a;
 }
 
 .light-mode .card{
-  background:white;
-  color:#0f172a;
+background:white;
+color:#0f172a;
 }
 
-/* MOBILE RESPONSIVE */
-@media(max-width:900px){
+.light-mode nav a{
+color:#0f172a;
+}
 
-  .menu-toggle{
-    display:block;
-  }
+/* RESPONSIVE TEXT */
+@media(max-width:768px){
+.hero-content h1{
+font-size:2.5rem;
+}
 
-  nav{
-    position:absolute;
-    top:70px;
-    left:0;
-    width:100%;
-    background:#0f172a;
-    display:none;
-    flex-direction:column;
-  }
-
-  nav.active{
-    display:flex;
-  }
-
-  nav ul{
-    flex-direction:column;
-    padding:20px;
-  }
-
-  .hero h1{
-    font-size:2.2rem;
-  }
-
-  header{
-    padding:12px 4%;
-  }
+section{
+padding:80px 5%;
+}
 }
 </style>
 </head>
@@ -273,99 +281,134 @@ footer{
 <body>
 
 <header>
-  <div class="logo">
-    <img src="animo 2.png" alt="Logo">
-  </div>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="logo">
+<img src="animo 2.png" alt="logo">
+</div>
 
-  <nav id="nav">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#printing">Printing</a></li>
-      <li><a href="#web">Web</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<div class="menu-toggle" id="menu-toggle">☰</div>
 
-  <button class="dark-toggle" onclick="toggleMode()">Mode</button>
+<nav id="nav">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="printing.html">Printing</a></li>
+<li><a href="webdeveloping.html">Web Development</a></li>
+<li><a href="potfolio.html">Portfolio</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
+
+<button class="dark-toggle" onclick="toggleMode()">Mode</button>
+
 </header>
 
 <section class="hero" id="home">
-  <div>
-    <h1>Professional Printing & Web Development Solutions</h1>
-    <p>We help businesses grow through modern printing, branding, and web development services.</p>
-    <a href="#contact" class="btn">Get Started</a>
-  </div>
+<div class="hero-content">
+
+<h1>Professional Printing & Web Development Solutions</h1>
+
+<p>
+Group Holdings provides high-quality printing services and cutting-edge web development solutions for businesses and individuals.
+</p>
+
+<div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-top:30px;">
+<a href="#printing" class="btn">Printing Services</a>
+<a href="#web" class="btn">Web Development</a>
+</div>
+
+</div>
 </section>
 
 <section id="about">
-  <div class="section-title">
-    <h2>About Us</h2>
-  </div>
-  <p style="max-width:800px;margin:auto;text-align:center;color:#cbd5e1;">
-    Animo Group Holdings is a creative agency specializing in printing, branding, and web development solutions for modern businesses.
-  </p>
+<div class="section-title"><h2>About Us</h2></div>
+<p style="max-width:900px;margin:auto;text-align:center;color:#cbd5e1;">
+Group Holdings is a modern digital and printing solutions company dedicated to helping businesses grow.
+</p>
 </section>
 
 <section id="printing">
-  <div class="section-title"><h2>Printing Services</h2></div>
-  <div class="services">
-    <div class="card"><h3>Business Cards</h3><p>Premium designs.</p></div>
-    <div class="card"><h3>Flyers</h3><p>Marketing materials.</p></div>
-    <div class="card"><h3>Banners</h3><p>Large format prints.</p></div>
-    <div class="card"><h3>Apparel</h3><p>T-shirt printing.</p></div>
-  </div>
+<div class="section-title"><h2>Printing Services</h2></div>
+
+<div class="services">
+<div class="card"><h3>Business Cards</h3><p>Premium design and printing.</p></div>
+<div class="card"><h3>Flyers</h3><p>Marketing materials.</p></div>
+<div class="card"><h3>Banners</h3><p>Large format printing.</p></div>
+<div class="card"><h3>T-Shirts</h3><p>Custom apparel printing.</p></div>
+</div>
 </section>
 
 <section id="web">
-  <div class="section-title"><h2>Web Development</h2></div>
-  <div class="services">
-    <div class="card"><h3>Web Design</h3><p>Modern responsive sites.</p></div>
-    <div class="card"><h3>E-Commerce</h3><p>Online stores.</p></div>
-    <div class="card"><h3>SEO</h3><p>Google ranking boost.</p></div>
-    <div class="card"><h3>Maintenance</h3><p>Ongoing support.</p></div>
-  </div>
+<div class="section-title"><h2>Web Development Services</h2></div>
+
+<div class="services">
+<div class="card"><h3>Website Design</h3><p>Modern responsive websites.</p></div>
+<div class="card"><h3>E-Commerce</h3><p>Online store solutions.</p></div>
+<div class="card"><h3>SEO</h3><p>Google ranking improvement.</p></div>
+<div class="card"><h3>Maintenance</h3><p>Website support & updates.</p></div>
+</div>
 </section>
 
 <section id="portfolio">
-  <div class="section-title"><h2>Portfolio</h2></div>
-  <div class="portfolio-grid">
-    <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" /></div>
-    <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" /></div>
-    <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" /></div>
-  </div>
+<div class="section-title"><h2>Portfolio</h2></div>
+
+<div class="portfolio-grid">
+<div class="portfolio-item">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<div class="portfolio-item">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<div class="portfolio-item">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop">
+</div>
+</div>
 </section>
 
 <section id="contact">
-  <div class="section-title"><h2>Contact Us</h2></div>
-  <form class="contact-form" onsubmit="submitForm(event)">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message" required></textarea>
-    <button class="btn" type="submit">Send</button>
-  </form>
+<div class="section-title"><h2>Contact Us</h2></div>
+
+<form class="contact-form" onsubmit="submitForm(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="text" placeholder="Phone Number" required>
+<textarea placeholder="Your Message" required></textarea>
+<button type="submit" class="btn">Send Message</button>
+</form>
 </section>
 
 <footer>
-  <p>© 2026 Animo Group Holdings</p>
+<h3>Group Holdings</h3>
+
+<div class="footer-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#printing">Printing</a>
+<a href="#web">Web</a>
+<a href="#contact">Contact</a>
+</div>
+
+<p>© 2026 Group Holdings. All Rights Reserved.</p>
 </footer>
 
 <script>
 function submitForm(e){
-  e.preventDefault();
-  alert("Message sent!");
+e.preventDefault();
+alert("Message sent successfully!");
 }
 
 function toggleMode(){
-  document.body.classList.toggle("light-mode");
+document.body.classList.toggle("light-mode");
 }
 
-function toggleMenu(){
-  document.getElementById("nav").classList.toggle("active");
-}
+const menuToggle=document.getElementById("menu-toggle");
+const nav=document.getElementById("nav");
+
+menuToggle.onclick=()=>{
+nav.classList.toggle("active");
+};
 </script>
 
 </body>
