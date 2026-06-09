@@ -11,6 +11,7 @@
 
 <style>
 
+/* ================= BASE ================= */
 *{
     margin:0;
     padding:0;
@@ -55,7 +56,7 @@ nav ul{
 nav a{
     color:white;
     text-decoration:none;
-    transition:0.3s;
+    font-size:0.95rem;
 }
 
 nav a:hover,
@@ -69,16 +70,16 @@ nav a.active{
     border-radius:30px;
     background:#38bdf8;
     color:#0f172a;
-    cursor:pointer;
     font-weight:600;
+    cursor:pointer;
 }
 
 /* ================= HERO ================= */
 .hero{
     min-height:55vh;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
     padding:140px 6% 60px;
     background:
@@ -93,30 +94,30 @@ nav a.active{
 }
 
 .hero p{
-    color:#cbd5e1;
     max-width:600px;
     margin:auto;
+    color:#cbd5e1;
 }
 
 /* ================= SECTIONS ================= */
 section{
-    padding:80px 6%;
+    padding:70px 6%;
 }
 
-.title{
+.section-title{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:35px;
 }
 
-.title h2{
-    font-size:2.2rem;
+.section-title h2{
+    font-size:2.1rem;
     color:#38bdf8;
 }
 
-/* ================= GRID ================= */
+/* ================= GRID LAYOUT ================= */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:20px;
 }
 
@@ -130,13 +131,13 @@ section{
 }
 
 .card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-5px);
     border-color:#38bdf8;
 }
 
 .card h3{
     color:#38bdf8;
-    margin-bottom:8px;
+    margin-bottom:6px;
 }
 
 /* ================= SOCIALS ================= */
@@ -145,7 +146,7 @@ section{
     flex-wrap:wrap;
     justify-content:center;
     gap:10px;
-    margin-top:10px;
+    margin-top:20px;
 }
 
 .socials a{
@@ -158,8 +159,8 @@ section{
 }
 
 /* ================= FORM ================= */
-.form{
-    max-width:600px;
+.form-wrapper{
+    max-width:650px;
     margin:auto;
     background:rgba(255,255,255,0.05);
     padding:25px;
@@ -167,8 +168,8 @@ section{
     border:1px solid rgba(255,255,255,0.1);
 }
 
-.form input,
-.form textarea{
+.form-wrapper input,
+.form-wrapper textarea{
     width:100%;
     padding:14px;
     margin-bottom:12px;
@@ -178,7 +179,7 @@ section{
     color:white;
 }
 
-.form textarea{
+.form-wrapper textarea{
     min-height:140px;
 }
 
@@ -195,15 +196,15 @@ section{
 
 /* ================= FAQ ================= */
 .faq{
-    max-width:900px;
+    max-width:850px;
     margin:auto;
 }
 
 .faq-item{
     background:rgba(255,255,255,0.05);
     padding:18px;
-    margin-bottom:12px;
     border-radius:12px;
+    margin-bottom:12px;
     border:1px solid rgba(255,255,255,0.1);
 }
 
@@ -212,21 +213,21 @@ section{
     margin-bottom:6px;
 }
 
-/* ================= MAP ================= */
-.map iframe{
-    width:100%;
-    height:350px;
-    border:none;
-    border-radius:16px;
-}
-
 /* ================= CTA ================= */
 .cta{
     text-align:center;
-    padding:60px 20px;
+    padding:55px 20px;
     background:linear-gradient(to right,#0ea5e9,#38bdf8);
     color:#0f172a;
     border-radius:18px;
+}
+
+/* ================= MAP ================= */
+.map iframe{
+    width:100%;
+    height:360px;
+    border:none;
+    border-radius:16px;
 }
 
 /* ================= FOOTER ================= */
@@ -283,16 +284,19 @@ footer a{
     <button class="dark-toggle" onclick="toggleMode()">Mode</button>
 </header>
 
+<!-- HERO -->
 <section class="hero">
     <div>
         <h1>Contact Us</h1>
-        <p>We respond fast. Let’s build your brand, website or print solution today.</p>
+        <p>We respond quickly. Let’s build your brand, website or printing solution.</p>
     </div>
 </section>
 
-<!-- CONTACT INFO -->
+<!-- INFO -->
 <section>
-<div class="title"><h2>Get In Touch</h2></div>
+<div class="section-title">
+    <h2>Get In Touch</h2>
+</div>
 
 <div class="grid">
 
@@ -314,7 +318,7 @@ footer a{
 
 <div class="card">
 <h3>Business Hours</h3>
-<p>Mon - Fri: 08:00 - 17:00</p>
+<p>Mon–Fri: 08:00–17:00</p>
 </div>
 
 </div>
@@ -328,11 +332,12 @@ footer a{
 
 <!-- FORM -->
 <section>
-<div class="title"><h2>Send Message</h2></div>
+<div class="section-title">
+<h2>Send Message</h2>
+</div>
 
-<form class="form"
-action="https://formspree.io/f/xojzdbzd"
-method="POST">
+<div class="form-wrapper">
+<form action="https://formspree.io/f/xojzdbzd" method="POST">
 
 <input type="text" name="full_name" placeholder="Full Name" required>
 <input type="email" name="email" placeholder="Email" required>
@@ -340,33 +345,37 @@ method="POST">
 <textarea name="message" placeholder="Message" required></textarea>
 
 <button class="btn">Send Message</button>
+
 </form>
+</div>
 </section>
 
-<!-- FAQ (RESTORED) -->
+<!-- FAQ -->
 <section>
-<div class="title"><h2>Frequently Asked Questions</h2></div>
+<div class="section-title">
+<h2>Frequently Asked Questions</h2>
+</div>
 
 <div class="faq">
 
 <div class="faq-item">
 <h4>How fast do you respond?</h4>
-<p>We usually respond within 1–3 hours during business hours.</p>
+<p>Within 1–3 hours during business hours.</p>
 </div>
 
 <div class="faq-item">
-<h4>Do you offer custom website design?</h4>
-<p>Yes, all websites are fully custom-built to match your brand.</p>
+<h4>Do you offer custom websites?</h4>
+<p>Yes, all websites are fully custom-built.</p>
 </div>
 
 <div class="faq-item">
-<h4>Do you handle printing in bulk?</h4>
-<p>Yes, we handle both small and large-scale printing orders.</p>
+<h4>Do you handle printing orders?</h4>
+<p>Yes, both small and bulk printing.</p>
 </div>
 
 <div class="faq-item">
-<h4>Can I request a quote first?</h4>
-<p>Yes, all services start with a free quotation.</p>
+<h4>Do you give quotes first?</h4>
+<p>Yes, all services start with a free quote.</p>
 </div>
 
 </div>
@@ -376,7 +385,7 @@ method="POST">
 <section>
 <div class="cta">
 <h2>Let’s Build Something Amazing</h2>
-<p>Contact us today and let’s grow your business.</p>
+<p>Contact us today and grow your business.</p>
 </div>
 </section>
 
@@ -388,7 +397,6 @@ method="POST">
 <!-- FOOTER -->
 <footer>
 <h3>Animo Group Holdings</h3>
-<p>Email: info@groupholdings.com</p>
 
 <a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
 <a href="https://www.instagram.com/animo_groupholdings/">Instagram</a>
