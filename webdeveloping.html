@@ -1,543 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Web Development Services - Group Holdings">
-  <title>Web Development | Animo Group Holdings</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web Development Services - Group Holdings">
+<title>Web Development | Animo Group Holdings</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-      font-family:'Poppins',sans-serif;
-    }
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+}
 
-    body{
-      background:#0f172a;
-      color:white;
-      line-height:1.6;
-    }
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
+overflow-x:hidden;
+}
 
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      z-index:1000;
-      padding:15px 8%;
-      background:rgba(15,23,42,0.95);
-      backdrop-filter:blur(10px);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
+/* HEADER */
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+padding:15px 8%;
+background:rgba(15,23,42,0.95);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
 
-    .logo{
-      font-size:1.8rem;
-      font-weight:700;
-      color:#38bdf8;
-    }
+header img{
+width:140px;
+height:60px;
+}
 
-    nav ul{
-      display:flex;
-      gap:25px;
-      list-style:none;
-    }
+/* NAV */
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      transition:0.3s;
-    }
+nav a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
 
-    nav a:hover,
-    nav a.active{
-      color:#38bdf8;
-    }
+nav a:hover,
+nav a.active{
+color:#38bdf8;
+}
 
-    .dark-toggle{
-      padding:10px 18px;
-      border:none;
-      border-radius:30px;
-      background:#38bdf8;
-      color:#0f172a;
-      cursor:pointer;
-      font-weight:600;
-    }
+/* BUTTON */
+.dark-toggle{
+padding:10px 18px;
+border:none;
+border-radius:30px;
+background:#38bdf8;
+color:#0f172a;
+cursor:pointer;
+font-weight:600;
+}
 
-    .hero{
-      height:100vh;
-      background:
-      linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-      url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop')
-      center/cover;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:0 8%;
-    }
+/* MOBILE MENU */
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:white;
+}
 
-    .hero-content h1{
-      font-size:4rem;
-      margin-bottom:20px;
-    }
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 8% 60px;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop')
+center/cover;
+}
 
-    .hero-content p{
-      max-width:700px;
-      margin:auto;
-      margin-bottom:30px;
-      color:#cbd5e1;
-    }
+.hero-content h1{
+font-size:4rem;
+}
 
-    .btn{
-      display:inline-block;
-      padding:14px 30px;
-      background:#38bdf8;
-      color:#0f172a;
-      text-decoration:none;
-      border-radius:50px;
-      font-weight:600;
-      transition:0.3s;
-      margin:10px;
-    }
+.hero-content p{
+max-width:700px;
+margin:20px auto;
+color:#cbd5e1;
+}
 
-    .btn:hover{
-      transform:translateY(-5px);
-      background:#0ea5e9;
-    }
+/* BUTTON */
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:#38bdf8;
+color:#0f172a;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+margin:10px;
+}
 
-    section{
-      padding:100px 8%;
-    }
+.btn:hover{
+transform:translateY(-5px);
+background:#0ea5e9;
+}
 
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
+/* SECTIONS */
+section{
+padding:100px 8%;
+}
 
-    .section-title h2{
-      font-size:2.5rem;
-      color:#38bdf8;
-    }
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
 
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:25px;
-    }
+.section-title h2{
+font-size:2.5rem;
+color:#38bdf8;
+}
 
-    .service-card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:20px;
-      overflow:hidden;
-      transition:0.3s;
-    }
+/* SERVICES */
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
 
-    .service-card:hover{
-      transform:translateY(-10px);
-      border-color:#38bdf8;
-    }
+.service-card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:20px;
+overflow:hidden;
+transition:0.3s;
+}
 
-    .service-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
+.service-card:hover{
+transform:translateY(-8px);
+border-color:#38bdf8;
+}
 
-    .service-content{
-      padding:25px;
-    }
+.service-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
 
-    .service-content h3{
-      color:#38bdf8;
-      margin-bottom:15px;
-    }
+.service-content{
+padding:25px;
+}
 
-    .tech-stack{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:20px;
-      text-align:center;
-    }
+.service-content h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
 
-    .tech-card{
-      background:rgba(255,255,255,0.05);
-      padding:30px;
-      border-radius:20px;
-      transition:0.3s;
-    }
+/* TECH STACK */
+.tech-stack{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:20px;
+text-align:center;
+}
 
-    .tech-card:hover{
-      transform:scale(1.05);
-    }
+.tech-card{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:20px;
+transition:0.3s;
+}
 
-    .portfolio{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:25px;
-    }
+.tech-card:hover{
+transform:scale(1.05);
+}
 
-    .portfolio img{
-      width:100%;
-      border-radius:20px;
-      transition:0.3s;
-    }
+/* PORTFOLIO */
+.portfolio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
 
-    .portfolio img:hover{
-      transform:scale(1.05);
-    }
+.portfolio img{
+width:100%;
+border-radius:20px;
+transition:0.3s;
+}
 
-    .pricing-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
+.portfolio img:hover{
+transform:scale(1.05);
+}
 
-    .price-card{
-      background:rgba(255,255,255,0.05);
-      padding:35px;
-      border-radius:20px;
-      text-align:center;
-      transition:0.3s;
-    }
+/* PRICING */
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
 
-    .price-card:hover{
-      transform:translateY(-10px);
-    }
+.price-card{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:20px;
+text-align:center;
+transition:0.3s;
+}
 
-    .price-card h3{
-      color:#38bdf8;
-      margin-bottom:15px;
-    }
+.price-card:hover{
+transform:translateY(-8px);
+}
 
-    .price{
-      font-size:2.5rem;
-      margin-bottom:20px;
-    }
+.price-card h3{
+color:#38bdf8;
+}
 
-    .cta{
-      background:linear-gradient(to right,#0ea5e9,#38bdf8);
-      border-radius:25px;
-      text-align:center;
-      padding:60px 30px;
-      color:#0f172a;
-    }
+.price{
+font-size:2.5rem;
+margin:20px 0;
+}
 
-    footer{
-      background:#020617;
-      text-align:center;
-      padding:40px;
-      margin-top:50px;
-    }
+/* CTA */
+.cta{
+background:linear-gradient(to right,#0ea5e9,#38bdf8);
+border-radius:25px;
+text-align:center;
+padding:60px 20px;
+color:#0f172a;
+}
 
-    footer a{
-      color:#38bdf8;
-      text-decoration:none;
-      margin:0 10px;
-    }
+/* FOOTER */
+footer{
+background:#020617;
+text-align:center;
+padding:40px 20px;
+margin-top:50px;
+}
 
-    .light-mode{
-      background:#f8fafc;
-      color:#0f172a;
-    }
+footer a{
+color:#38bdf8;
+text-decoration:none;
+margin:0 10px;
+}
 
-    .light-mode header,
-    .light-mode footer{
-      background:white;
-      color:#0f172a;
-    }
+/* LIGHT MODE */
+.light-mode{
+background:#f8fafc;
+color:#0f172a;
+}
 
-    .light-mode nav a{
-      color:#0f172a;
-    }
+.light-mode header,
+.light-mode footer{
+background:white;
+color:#0f172a;
+}
 
-    .light-mode .service-card,
-    .light-mode .tech-card,
-    .light-mode .price-card{
-      background:white;
-      color:#0f172a;
-    }
+.light-mode nav a{
+color:#0f172a;
+}
 
-    @media(max-width:768px){
+.light-mode .service-card,
+.light-mode .tech-card,
+.light-mode .price-card{
+background:white;
+color:#0f172a;
+}
 
-      .hero-content h1{
-        font-size:2.5rem;
-      }
+/* RESPONSIVE */
+@media(max-width:900px){
 
-      nav ul{
-        gap:15px;
-        font-size:0.9rem;
-      }
+.menu-toggle{
+display:block;
+}
 
-    }
+nav{
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#0f172a;
+display:none;
+}
 
-  </style>
+nav.active{
+display:block;
+}
+
+nav ul{
+flex-direction:column;
+padding:20px;
+gap:15px;
+}
+
+.hero-content h1{
+font-size:2.5rem;
+}
+
+section{
+padding:80px 5%;
+}
+}
+
+</style>
 
 </head>
+
 <body>
 
 <header>
 
-  <img src="animo 2.png"
-      width="140px" height="60px">
+<img src="animo 2.png" alt="logo">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="printing.html">Printing</a></li>
-      <li><a class="active" href="#">Web Development</a></li>
-      <li><a href="potfolio.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<div class="menu-toggle" id="menu-toggle">☰</div>
 
-  <button class="dark-toggle" onclick="toggleMode()">Mode</button>
+<nav id="nav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="printing.html">Printing</a></li>
+<li><a class="active" href="#">Web Development</a></li>
+<li><a href="potfolio.html">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<button class="dark-toggle" onclick="toggleMode()">Mode</button>
 
 </header>
 
 <section class="hero">
 
-  <div class="hero-content">
+<div class="hero-content">
 
-    <h1>Modern Web Development Solutions</h1>
+<h1>Modern Web Development Solutions</h1>
 
-    <p>
-      We create responsive, secure, and modern websites that help businesses
-      grow online and stand out in the digital world.
-    </p>
+<p>
+We create responsive, secure, and modern websites that help businesses grow online.
+</p>
 
-    <a href="#services" class="btn">Explore Services</a>
-    <a href="#pricing" class="btn">View Pricing</a>
+<a href="#services" class="btn">Explore Services</a>
+<a href="#pricing" class="btn">View Pricing</a>
 
-  </div>
+</div>
 
 </section>
 
 <section id="services">
 
-  <div class="section-title">
-    <h2>Web Development Services</h2>
-  </div>
+<div class="section-title"><h2>Web Development Services</h2></div>
 
-  <div class="services-grid">
+<div class="services-grid">
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
-      <div class="service-content">
-        <h3>Website Design</h3>
-        <p>
-          Modern responsive website designs tailored to your business.
-        </p>
-      </div>
-    </div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<div class="service-content">
+<h3>Website Design</h3>
+<p>Modern responsive websites.</p>
+</div>
+</div>
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop">
-      <div class="service-content">
-        <h3>E-Commerce Websites</h3>
-        <p>
-          Secure online stores with payment gateway integration.
-        </p>
-      </div>
-    </div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
+<div class="service-content">
+<h3>E-Commerce</h3>
+<p>Secure online stores.</p>
+</div>
+</div>
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
-      <div class="service-content">
-        <h3>SEO Optimization</h3>
-        <p>
-          Improve visibility and rank higher on search engines.
-        </p>
-      </div>
-    </div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+<div class="service-content">
+<h3>SEO Optimization</h3>
+<p>Rank higher on Google.</p>
+</div>
+</div>
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
-      <div class="service-content">
-        <h3>Website Maintenance</h3>
-        <p>
-          Ongoing updates, security, and technical support.
-        </p>
-      </div>
-    </div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+<div class="service-content">
+<h3>Maintenance</h3>
+<p>Website support & updates.</p>
+</div>
+</div>
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop">
-      <div class="service-content">
-        <h3>UI/UX Design</h3>
-        <p>
-          Beautiful and user-friendly interfaces for better engagement.
-        </p>
-      </div>
-    </div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
+<div class="service-content">
+<h3>UI/UX Design</h3>
+<p>User-friendly interfaces.</p>
+</div>
+</div>
 
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop">
-      <div class="service-content">
-        <h3>Hosting Solutions</h3>
-        <p>
-          Reliable hosting and domain management services.
-        </p>
-      </div>
-    </div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d">
+<div class="service-content">
+<h3>Hosting</h3>
+<p>Reliable hosting solutions.</p>
+</div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 <section>
 
-  <div class="section-title">
-    <h2>Technology Stack</h2>
-  </div>
+<div class="section-title"><h2>Technology Stack</h2></div>
 
-  <div class="tech-stack">
+<div class="tech-stack">
 
-    <div class="tech-card">
-      <h3>HTML5</h3>
-    </div>
+<div class="tech-card">HTML5</div>
+<div class="tech-card">CSS3</div>
+<div class="tech-card">JavaScript</div>
+<div class="tech-card">React.js</div>
+<div class="tech-card">Node.js</div>
+<div class="tech-card">MongoDB</div>
 
-    <div class="tech-card">
-      <h3>CSS3</h3>
-    </div>
-
-    <div class="tech-card">
-      <h3>JavaScript</h3>
-    </div>
-
-    <div class="tech-card">
-      <h3>React.js</h3>
-    </div>
-
-    <div class="tech-card">
-      <h3>Node.js</h3>
-    </div>
-
-    <div class="tech-card">
-      <h3>MongoDB</h3>
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 <section>
 
-  <div class="section-title">
-    <h2>Recent Projects</h2>
-  </div>
+<div class="section-title"><h2>Recent Projects</h2></div>
 
-  <div class="portfolio">
+<div class="portfolio">
 
-    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
 
-    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
-
-    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
-
-  </div>
+</div>
 
 </section>
 
 <section id="pricing">
 
-  <div class="section-title">
-    <h2>Development Packages</h2>
-  </div>
+<div class="section-title"><h2>Development Packages</h2></div>
 
-  <div class="pricing-grid">
+<div class="pricing-grid">
 
-    <div class="price-card">
-      <h3>Starter</h3>
-      <div class="price">R999</div>
-      <p>1-Page Website</p>
-      <p>Responsive Design</p>
-      <p>Basic SEO</p>
-      <br>
-      <a href="#" class="btn">Choose Plan</a>
-    </div>
+<div class="price-card">
+<h3>Starter</h3>
+<div class="price">R999</div>
+<p>1 Page Website</p>
+<a href="#" class="btn">Choose</a>
+</div>
 
-    <div class="price-card">
-      <h3>Professional</h3>
-      <div class="price">R3499</div>
-      <p>Business Website</p>
-      <p>5+ Pages</p>
-      <p>SEO Optimization</p>
-      <br>
-      <a href="#" class="btn">Choose Plan</a>
-    </div>
+<div class="price-card">
+<h3>Pro</h3>
+<div class="price">R3499</div>
+<p>Business Website</p>
+<a href="#" class="btn">Choose</a>
+</div>
 
-    <div class="price-card">
-      <h3>Enterprise</h3>
-      <div class="price">R7999</div>
-      <p>E-Commerce Store</p>
-      <p>Custom Features</p>
-      <p>Premium Support</p>
-      <br>
-      <a href="#" class="btn">Choose Plan</a>
-    </div>
+<div class="price-card">
+<h3>Enterprise</h3>
+<div class="price">R7999</div>
+<p>E-Commerce Store</p>
+<a href="#" class="btn">Choose</a>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 <section>
 
-  <div class="cta">
+<div class="cta">
 
-    <h2 style="font-size:2.5rem; margin-bottom:20px;">
-      Ready To Build Your Website?
-    </h2>
+<h2 style="font-size:2.3rem;margin-bottom:20px;">
+Build Your Website Today
+</h2>
 
-    <p style="margin-bottom:30px;">
-      Let Group Holdings create a powerful online presence for your business.
-    </p>
+<p style="margin-bottom:25px;">
+Let us grow your digital presence.
+</p>
 
-    <a href="contact.html" class="btn">Request a Quote</a>
+<a href="contact.html" class="btn">Request Quote</a>
 
-  </div>
+</div>
 
 </section>
 
 <footer>
 
-  <h3>Group Holdings</h3>
+<h3>Group Holdings</h3>
 
-  <br>
+<br>
 
-  <p>Email: info@groupholdings.com</p>
-  <p>Phone: +27 68 714 3564</p>
-  <p>Phone: +27 61 167 3793</p>
+<p>Email: info@groupholdings.com</p>
+<p>Phone: +27 68 714 3564</p>
+<p>Phone: +27 61 167 3793</p>
 
-  <br>
+<br>
 
-  <div>
-    <a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
-    <a href="https://www.instagram.com/animo_groupholdings?igsh=bjVseHVpcWdwcXpr&utm_source=qr">Instagram</a>
-    <a href="https://www.linkedin.com/company/animogroupholdings/">LinkedIn</a>
-  </div>
+<div>
+<a href="https://web.facebook.com/profile.php?id=61572512004490">Facebook</a>
+<a href="https://www.instagram.com/animo_groupholdings?igsh=bjVseHVpcWdwcXpr&utm_source=qr">Instagram</a>
+<a href="https://www.linkedin.com/company/animogroupholdings/">LinkedIn</a>
+</div>
 
-  <br>
+<br>
 
-  <p>© 2026 Group Holdings. All Rights Reserved.</p>
+<p>© 2026 Group Holdings. All Rights Reserved.</p>
 
 </footer>
 
 <script>
 
-  function toggleMode(){
-    document.body.classList.toggle('light-mode');
-  }
+function toggleMode(){
+document.body.classList.toggle("light-mode");
+}
+
+const menuToggle=document.getElementById("menu-toggle");
+const nav=document.getElementById("nav");
+
+menuToggle.onclick=()=>{
+nav.classList.toggle("active");
+};
 
 </script>
 
