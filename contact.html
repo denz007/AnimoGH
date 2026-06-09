@@ -25,7 +25,7 @@ body{
     line-height:1.6;
 }
 
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 header{
     position:fixed;
     top:0;
@@ -38,8 +38,8 @@ header{
     justify-content:space-between;
     align-items:center;
     border-bottom:1px solid rgba(255,255,255,0.1);
+    gap:12px;
     flex-wrap:wrap;
-    gap:10px;
 }
 
 header img{
@@ -49,7 +49,7 @@ header img{
 
 nav ul{
     display:flex;
-    gap:18px;
+    gap:16px;
     list-style:none;
     flex-wrap:wrap;
     justify-content:center;
@@ -58,8 +58,8 @@ nav ul{
 nav a{
     color:white;
     text-decoration:none;
-    transition:0.3s;
     font-size:0.95rem;
+    transition:0.3s;
 }
 
 nav a:hover,
@@ -77,6 +77,7 @@ nav a.active{
     cursor:pointer;
     font-weight:600;
     transition:0.3s;
+    white-space:nowrap;
 }
 
 .dark-toggle:hover{
@@ -84,23 +85,24 @@ nav a.active{
     background:#0ea5e9;
 }
 
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 .hero{
-    min-height:65vh;
-    background:
-    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-    url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop')
-    center/cover;
+    min-height:60vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
     padding:120px 6% 60px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+    url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop')
+    center/cover;
 }
 
 .hero-content h1{
-    font-size:3.5rem;
-    margin-bottom:15px;
+    font-size:3.2rem;
+    margin-bottom:10px;
 }
 
 .hero-content p{
@@ -109,7 +111,7 @@ nav a.active{
     color:#cbd5e1;
 }
 
-/* ===== SECTIONS ===== */
+/* ================= SECTION ================= */
 section{
     padding:80px 6%;
 }
@@ -124,19 +126,19 @@ section{
     color:#38bdf8;
 }
 
-/* ===== CONTACT LAYOUT ===== */
+/* ================= GRID ================= */
 .contact-container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-/* ===== CARDS ===== */
+/* ================= CARDS ================= */
 .info-card,
 .contact-form{
     background:rgba(255,255,255,0.05);
     padding:25px;
-    border-radius:20px;
+    border-radius:18px;
     border:1px solid rgba(255,255,255,0.1);
     transition:0.3s;
 }
@@ -148,76 +150,16 @@ section{
 
 .info-card h3{
     color:#38bdf8;
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
-/* ===== FORM ===== */
-.contact-form h2{
-    color:#38bdf8;
-    margin-bottom:20px;
-    text-align:center;
-}
-
-.form-group{
-    margin-bottom:15px;
-}
-
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    background:rgba(255,255,255,0.08);
-    color:white;
-    outline:none;
-}
-
-.contact-form textarea{
-    min-height:140px;
-    resize:none;
-}
-
-/* FIXED INPUT PLACEHOLDER */
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{
-    color:#cbd5e1;
-}
-
-/* ===== BUTTON FIXED ===== */
-.btn{
-    display:inline-block;
-    padding:12px 22px;
-    background:#38bdf8;
-    color:#0f172a;
-    border:none;
-    border-radius:50px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
-    text-align:center;
-    width:auto;              /* FIX: no full width */
-    min-width:160px;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    background:#0ea5e9;
-}
-
-/* center form button properly */
-.contact-form button{
-    display:block;
-    margin:10px auto 0;
-}
-
-/* ===== SOCIALS FIXED ===== */
+/* ================= SOCIALS ================= */
 .socials{
     display:flex;
     flex-wrap:wrap;
     gap:10px;
-    margin-top:20px;
     justify-content:center;
+    margin-top:10px;
 }
 
 .socials a{
@@ -235,10 +177,66 @@ section{
     background:#0ea5e9;
 }
 
-/* ===== MAP ===== */
+/* ================= FORM ================= */
+.contact-form h2{
+    color:#38bdf8;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.form-group{
+    margin-bottom:12px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.08);
+    color:white;
+    outline:none;
+}
+
+.contact-form textarea{
+    min-height:130px;
+    resize:none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color:#cbd5e1;
+}
+
+/* ================= BUTTON FIX ================= */
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    background:#38bdf8;
+    color:#0f172a;
+    border:none;
+    border-radius:50px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    min-width:160px;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#0ea5e9;
+}
+
+.contact-form button{
+    display:block;
+    margin:10px auto 0;
+}
+
+/* ================= MAP ================= */
 .map{
     margin-top:50px;
-    border-radius:20px;
+    border-radius:18px;
     overflow:hidden;
 }
 
@@ -248,16 +246,16 @@ section{
     border:none;
 }
 
-/* ===== CTA ===== */
+/* ================= CTA ================= */
 .cta{
     background:linear-gradient(to right,#0ea5e9,#38bdf8);
-    border-radius:25px;
+    border-radius:20px;
     text-align:center;
     padding:50px 20px;
     color:#0f172a;
 }
 
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 footer{
     background:#020617;
     text-align:center;
@@ -270,7 +268,7 @@ footer a{
     margin:0 10px;
 }
 
-/* ===== LIGHT MODE ===== */
+/* ================= LIGHT MODE ================= */
 .light-mode{
     background:#f8fafc;
     color:#0f172a;
@@ -297,12 +295,8 @@ footer a{
     color:#0f172a;
 }
 
-/* ===== MOBILE FIXED ===== */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
-
-    .hero-content h1{
-        font-size:2.2rem;
-    }
 
     header{
         flex-direction:column;
@@ -310,16 +304,18 @@ footer a{
     }
 
     nav ul{
-        flex-direction:row;
-        flex-wrap:wrap;
         justify-content:center;
         gap:10px;
         font-size:0.85rem;
     }
 
+    .hero-content h1{
+        font-size:2.2rem;
+    }
+
     .btn{
-        width:100%;   /* mobile only full width */
-        max-width:260px;
+        width:100%;
+        max-width:240px;
     }
 
     .socials a{
@@ -358,6 +354,7 @@ footer a{
 </section>
 
 <section>
+
 <div class="section-title">
     <h2>Get In Touch</h2>
 </div>
