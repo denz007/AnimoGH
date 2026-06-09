@@ -67,6 +67,7 @@ nav a.active{
     color:#38bdf8;
 }
 
+/* FIXED BUTTON */
 .dark-toggle{
     padding:10px 14px;
     border:none;
@@ -75,6 +76,12 @@ nav a.active{
     color:#0f172a;
     cursor:pointer;
     font-weight:600;
+    transition:0.3s;
+}
+
+.dark-toggle:hover{
+    transform:translateY(-2px);
+    background:#0ea5e9;
 }
 
 /* ===== HERO ===== */
@@ -120,14 +127,13 @@ section{
 /* ===== CONTACT LAYOUT ===== */
 .contact-container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
 }
 
 /* ===== CARDS ===== */
 .info-card,
-.contact-form,
-.faq-card{
+.contact-form{
     background:rgba(255,255,255,0.05);
     padding:25px;
     border-radius:20px;
@@ -135,14 +141,12 @@ section{
     transition:0.3s;
 }
 
-.info-card:hover,
-.faq-card:hover{
+.info-card:hover{
     transform:translateY(-6px);
     border-color:#38bdf8;
 }
 
-.info-card h3,
-.faq-card h3{
+.info-card h3{
     color:#38bdf8;
     margin-bottom:10px;
 }
@@ -174,15 +178,16 @@ section{
     resize:none;
 }
 
+/* FIXED INPUT PLACEHOLDER */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder{
     color:#cbd5e1;
 }
 
-/* ===== BUTTON ===== */
+/* ===== BUTTON FIXED ===== */
 .btn{
     display:inline-block;
-    padding:14px 26px;
+    padding:12px 22px;
     background:#38bdf8;
     color:#0f172a;
     border:none;
@@ -191,7 +196,8 @@ section{
     cursor:pointer;
     transition:0.3s;
     text-align:center;
-    width:100%;
+    width:auto;              /* FIX: no full width */
+    min-width:160px;
 }
 
 .btn:hover{
@@ -199,12 +205,19 @@ section{
     background:#0ea5e9;
 }
 
-/* ===== SOCIALS ===== */
+/* center form button properly */
+.contact-form button{
+    display:block;
+    margin:10px auto 0;
+}
+
+/* ===== SOCIALS FIXED ===== */
 .socials{
     display:flex;
     flex-wrap:wrap;
     gap:10px;
-    margin-top:10px;
+    margin-top:20px;
+    justify-content:center;
 }
 
 .socials a{
@@ -214,6 +227,12 @@ section{
     padding:10px 14px;
     border-radius:50px;
     font-weight:600;
+    transition:0.3s;
+}
+
+.socials a:hover{
+    transform:translateY(-3px);
+    background:#0ea5e9;
 }
 
 /* ===== MAP ===== */
@@ -227,13 +246,6 @@ section{
     width:100%;
     height:350px;
     border:none;
-}
-
-/* ===== FAQ ===== */
-.faq-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
 }
 
 /* ===== CTA ===== */
@@ -274,7 +286,6 @@ footer a{
 }
 
 .light-mode .info-card,
-.light-mode .faq-card,
 .light-mode .contact-form{
     background:white;
     color:#0f172a;
@@ -286,26 +297,34 @@ footer a{
     color:#0f172a;
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE FIXED ===== */
 @media(max-width:768px){
 
     .hero-content h1{
-        font-size:2.3rem;
+        font-size:2.2rem;
     }
 
     header{
         flex-direction:column;
-        align-items:center;
+        text-align:center;
     }
 
     nav ul{
+        flex-direction:row;
+        flex-wrap:wrap;
         justify-content:center;
         gap:10px;
         font-size:0.85rem;
     }
 
-    section{
-        padding:70px 5%;
+    .btn{
+        width:100%;   /* mobile only full width */
+        max-width:260px;
+    }
+
+    .socials a{
+        flex:1 1 40%;
+        text-align:center;
     }
 }
 
