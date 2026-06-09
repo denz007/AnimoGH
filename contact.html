@@ -31,15 +31,15 @@ header{
     top:0;
     width:100%;
     z-index:1000;
-    padding:12px 6%;
+    padding:14px 6%;
     background:rgba(15,23,42,0.95);
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
     display:flex;
     justify-content:space-between;
     align-items:center;
     border-bottom:1px solid rgba(255,255,255,0.1);
     flex-wrap:wrap;
-    gap:10px;
+    gap:12px;
 }
 
 header img{
@@ -57,6 +57,7 @@ nav a{
     color:white;
     text-decoration:none;
     font-size:0.95rem;
+    transition:0.3s;
 }
 
 nav a:hover,
@@ -64,7 +65,7 @@ nav a.active{
     color:#38bdf8;
 }
 
-.dark-toggle{
+button.mode{
     padding:10px 14px;
     border:none;
     border-radius:30px;
@@ -76,7 +77,7 @@ nav a.active{
 
 /* ================= HERO ================= */
 .hero{
-    min-height:55vh;
+    min-height:60vh;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -99,22 +100,22 @@ nav a.active{
     color:#cbd5e1;
 }
 
-/* ================= SECTIONS ================= */
+/* ================= SECTION ================= */
 section{
     padding:70px 6%;
 }
 
-.section-title{
+.title{
     text-align:center;
-    margin-bottom:35px;
+    margin-bottom:40px;
 }
 
-.section-title h2{
-    font-size:2.1rem;
+.title h2{
+    font-size:2.2rem;
     color:#38bdf8;
 }
 
-/* ================= GRID LAYOUT ================= */
+/* ================= GRID ================= */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -131,7 +132,7 @@ section{
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-6px);
     border-color:#38bdf8;
 }
 
@@ -143,8 +144,8 @@ section{
 /* ================= SOCIALS ================= */
 .socials{
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
+    flex-wrap:wrap;
     gap:10px;
     margin-top:20px;
 }
@@ -156,42 +157,55 @@ section{
     border-radius:50px;
     text-decoration:none;
     font-weight:600;
+    transition:0.3s;
+}
+
+.socials a:hover{
+    transform:translateY(-3px);
+    background:#0ea5e9;
 }
 
 /* ================= FORM ================= */
-.form-wrapper{
+.form-box{
     max-width:650px;
     margin:auto;
     background:rgba(255,255,255,0.05);
-    padding:25px;
+    padding:28px;
     border-radius:16px;
     border:1px solid rgba(255,255,255,0.1);
 }
 
-.form-wrapper input,
-.form-wrapper textarea{
+.form-box input,
+.form-box textarea{
     width:100%;
     padding:14px;
     margin-bottom:12px;
-    border-radius:12px;
     border:none;
+    border-radius:12px;
     background:rgba(255,255,255,0.08);
     color:white;
+    outline:none;
 }
 
-.form-wrapper textarea{
+.form-box textarea{
     min-height:140px;
 }
 
 .btn{
     width:100%;
-    padding:12px;
+    padding:14px;
     border:none;
     border-radius:50px;
     background:#38bdf8;
     color:#0f172a;
     font-weight:600;
     cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+    transform:translateY(-2px);
 }
 
 /* ================= FAQ ================= */
@@ -203,7 +217,7 @@ section{
 .faq-item{
     background:rgba(255,255,255,0.05);
     padding:18px;
-    border-radius:12px;
+    border-radius:14px;
     margin-bottom:12px;
     border:1px solid rgba(255,255,255,0.1);
 }
@@ -216,10 +230,14 @@ section{
 /* ================= CTA ================= */
 .cta{
     text-align:center;
-    padding:55px 20px;
+    padding:60px 20px;
+    border-radius:18px;
     background:linear-gradient(to right,#0ea5e9,#38bdf8);
     color:#0f172a;
-    border-radius:18px;
+}
+
+.cta h2{
+    margin-bottom:8px;
 }
 
 /* ================= MAP ================= */
@@ -246,20 +264,21 @@ footer a{
 /* ================= MOBILE ================= */
 @media(max-width:768px){
 
-    header{
-        flex-direction:column;
-        text-align:center;
-    }
+header{
+    flex-direction:column;
+    text-align:center;
+}
 
-    nav ul{
-        justify-content:center;
-        gap:10px;
-        font-size:0.85rem;
-    }
+nav ul{
+    justify-content:center;
+    gap:10px;
+    font-size:0.85rem;
+}
 
-    .hero h1{
-        font-size:2.2rem;
-    }
+.hero h1{
+    font-size:2.2rem;
+}
+
 }
 
 </style>
@@ -268,7 +287,7 @@ footer a{
 <body>
 
 <header>
-    <img src="animo 2.png">
+    <img src="animo 2.png" alt="logo">
 
     <nav>
         <ul>
@@ -281,22 +300,20 @@ footer a{
         </ul>
     </nav>
 
-    <button class="dark-toggle" onclick="toggleMode()">Mode</button>
+    <button class="mode" onclick="toggleMode()">Mode</button>
 </header>
 
 <!-- HERO -->
 <section class="hero">
     <div>
         <h1>Contact Us</h1>
-        <p>We respond quickly. Let’s build your brand, website or printing solution.</p>
+        <p>We’re ready to help you build your brand, website, or print solution.</p>
     </div>
 </section>
 
 <!-- INFO -->
 <section>
-<div class="section-title">
-    <h2>Get In Touch</h2>
-</div>
+<div class="title"><h2>Get In Touch</h2></div>
 
 <div class="grid">
 
@@ -317,8 +334,8 @@ footer a{
 </div>
 
 <div class="card">
-<h3>Business Hours</h3>
-<p>Mon–Fri: 08:00–17:00</p>
+<h3>Hours</h3>
+<p>Mon - Fri: 08:00 - 17:00</p>
 </div>
 
 </div>
@@ -332,11 +349,9 @@ footer a{
 
 <!-- FORM -->
 <section>
-<div class="section-title">
-<h2>Send Message</h2>
-</div>
+<div class="title"><h2>Send Message</h2></div>
 
-<div class="form-wrapper">
+<div class="form-box">
 <form action="https://formspree.io/f/xojzdbzd" method="POST">
 
 <input type="text" name="full_name" placeholder="Full Name" required>
@@ -352,30 +367,28 @@ footer a{
 
 <!-- FAQ -->
 <section>
-<div class="section-title">
-<h2>Frequently Asked Questions</h2>
-</div>
+<div class="title"><h2>Frequently Asked Questions</h2></div>
 
 <div class="faq">
 
 <div class="faq-item">
 <h4>How fast do you respond?</h4>
-<p>Within 1–3 hours during business hours.</p>
+<p>Usually within 1–3 hours during working hours.</p>
 </div>
 
 <div class="faq-item">
-<h4>Do you offer custom websites?</h4>
-<p>Yes, all websites are fully custom-built.</p>
+<h4>Do you design websites?</h4>
+<p>Yes, we build fully custom modern websites.</p>
 </div>
 
 <div class="faq-item">
-<h4>Do you handle printing orders?</h4>
-<p>Yes, both small and bulk printing.</p>
+<h4>Do you do printing?</h4>
+<p>Yes, from small to bulk printing services.</p>
 </div>
 
 <div class="faq-item">
-<h4>Do you give quotes first?</h4>
-<p>Yes, all services start with a free quote.</p>
+<h4>Do I get a quote first?</h4>
+<p>Yes, every project starts with a free quote.</p>
 </div>
 
 </div>
